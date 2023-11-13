@@ -1,9 +1,9 @@
 <template>
-   <div class="col-2 py-5">
+   <div class="col-2 pb-3 bg-light">
         <div>
             <img :src="cardImg" :alt="cardName" class="w-100"/>
-            <div>
-                <h6 class="title">{{ cardName }}</h6>
+            <div class="text-center bg-cards h">
+                <h6 class="title text-light text-uppercase fs-5">{{ cardName }}</h6>
                 <p>{{ cardArchetype }}</p>
             </div>
         </div>
@@ -28,6 +28,11 @@ import { store } from '../data/store'
     }
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+    .bg-cards{
+        background-color: #D48F38;
+    }
+    .h {
+        height: 150px
+    }
 </style>
