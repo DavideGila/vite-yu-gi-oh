@@ -1,5 +1,5 @@
 <template>
-   <div class="col-2 pb-3 bg-light">
+   <div class="col-2 pb-3">
         <div>
             <img :src="cardImg" :alt="cardName" class="w-100"/>
             <div class="text-center bg-cards h">
