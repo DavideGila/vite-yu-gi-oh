@@ -1,6 +1,6 @@
 <template>
   <div class="bg-main">
-    <!-- <HeaderComponent title="Yu-Gi-Oh Api"/> -->
+    <HeaderComponent />
     <div class="container bg-light">
       <h6 class="m-0 text-light bg-dark p-4 fw-bold">Found {{ store.cardList.length }} cards</h6>
     </div>
@@ -20,11 +20,13 @@
 <script>
   import { store } from './data/store';
   import axios from 'axios';
+  import HeaderComponent from './components/HeaderComponent.vue';
   import Card from './components/Card.vue';
 
   export default {
     components: {
-      Card
+      Card,
+      HeaderComponent
     },
     data() {
       return {
