@@ -53,10 +53,18 @@
         axios.get(url, {params: this.params}).then((response) =>{
           store.cardList = response.data.data;
         })
+      },
+      getArchetypes(){
+          const url = store.apiArchetypes;
+          axios.get(url).then((response) =>{
+              console.log(response.data);
+              store.archetypesList = response.data;
+          })
       }
     },
     created(){
       this.getCards()
+      this.getArchetypes()
     }
   }
 </script>
