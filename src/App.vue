@@ -1,7 +1,7 @@
 <template>
   <div class="bg-main">
     <HeaderComponent />
-    <SearchComponent @search="filterArchetype" />   
+    <SearchComponent @search="setParams" />   
     <div class="container bg-light padding-found-cards">
       <h6 class="m-0 text-light bg-dark p-4 fw-bold">Found {{ store.cardList.length }} cards</h6>
     </div>
@@ -33,19 +33,23 @@
     },
     data() {
       return {
-        store
+        store,
+        params: null
       }
     },
     methods: {
+      setParams(search){
+        console.log(search);
+        this.params = {
+          archetype: search
+        }
+        this.getCards()
+      },
       getCards(){
         const url = store.apiUrl;
-        axios.get(url).then((response) =>{
-          console.log(response.data.data);
+        axios.get(url, {params: this.params}).then((response) =>{
           store.cardList = response.data.data;
         })
-      },
-      filterArchetype(value){
-        console.log(value);
       }
     },
     created(){
