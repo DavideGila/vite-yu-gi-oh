@@ -1,12 +1,7 @@
 <template>
   <div class="bg-main">
     <HeaderComponent />
-    <div class="container py-4">
-      <select class="p-2 w-25 rounded-3" aria-label="Default select example">
-        <option selected>Alien</option>
-      </select>
-    </div>
-    
+    <SearchComponent />   
     <div class="container bg-light padding-found-cards">
       <h6 class="m-0 text-light bg-dark p-4 fw-bold">Found {{ store.cardList.length }} cards</h6>
     </div>
@@ -28,11 +23,13 @@
   import axios from 'axios';
   import HeaderComponent from './components/HeaderComponent.vue';
   import Card from './components/Card.vue';
+  import SearchComponent from './components/SearchComponent.vue';
 
   export default {
     components: {
       Card,
-      HeaderComponent
+      HeaderComponent,
+      SearchComponent
     },
     data() {
       return {
