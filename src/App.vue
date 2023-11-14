@@ -39,9 +39,12 @@
     },
     methods: {
       setParams(search){
-        console.log(search);
-        this.params = {
-          archetype: search
+        if(search){
+            this.params = {
+            archetype: search
+          }
+        } else {
+          this.params = null;
         }
         this.getCards()
       },
