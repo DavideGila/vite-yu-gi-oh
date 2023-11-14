@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import { store } from '../data/store';
 
     export default {
@@ -19,18 +18,6 @@ import { store } from '../data/store';
                 store
             }
         },
-        methods: {
-            getArchetypes(){
-                const url = store.apiArchetypes;
-                axios.get(url).then((response) =>{
-                    console.log(response.data);
-                    store.archetypesList = response.data;
-                })
-            }
-        },
-        created(){
-            this.getArchetypes()
-        }
     }
 </script>
 
