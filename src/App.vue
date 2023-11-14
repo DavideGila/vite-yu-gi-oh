@@ -9,7 +9,7 @@
       <div class="row bg-light padding-cards">
         <Card
         v-for="(element, index) in store.cardList"
-        :cardImg="element.card_images[0].image_url_small"
+        :cardImg="element.card_images[0].image_url"
         :cardName="element.name"
         :cardArchetype="element.archetype"
         />
