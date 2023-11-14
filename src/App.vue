@@ -1,7 +1,7 @@
 <template>
   <div class="bg-main">
     <HeaderComponent />
-    <SearchComponent />   
+    <SearchComponent @search="filterArchetype" />   
     <div class="container bg-light padding-found-cards">
       <h6 class="m-0 text-light bg-dark p-4 fw-bold">Found {{ store.cardList.length }} cards</h6>
     </div>
@@ -43,6 +43,9 @@
           console.log(response.data.data);
           store.cardList = response.data.data;
         })
+      },
+      filterArchetype(value){
+        console.log(value);
       }
     },
     created(){
